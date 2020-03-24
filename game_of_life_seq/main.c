@@ -15,6 +15,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * Concurrency and Parallelism - 2019/2020
+ * Game of Life (Work Assignment) - Sequential Version
+ *
+ * Adapted from:
+ * - Joao Manuel Lourenco - joao.lourenco@fct.unl.pt
+ * - Raphael Kubo da Costa - kubito@gmail.com
+ *
+ * Authors:
+ * - Ruben Andre Barreiro (Student no. 42648)
+ *   - r.barreiro@campus.fct.unl.pt
+ * - Tomas Duarte Pessanha (Student no. 41774)
+ *   - t.pessanha@campus.fct.unl.pt
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "config.h"
@@ -22,6 +37,20 @@
 
 int main(int argc, char *argv[])
 {
+
+  /**
+   *
+   * TASK #2 - Terminal ANSI Escape Codes' Usage:
+   *
+   * - 1) Clear the Screen 1 (Terminal), at the very beginning;
+   * - 2) Position the cursor at coordinates (0; 0) before printing the board,
+   *      so that a board is printed overlapping the last board.
+   *      This makes it easier to observe the evolution of the system;
+   *
+   */
+  printf("\033[2J");
+  printf("\033[0;0f");
+
   GameConfig *config;
   Game *game;
   size_t generation;
